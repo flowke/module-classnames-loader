@@ -1,0 +1,30 @@
+{
+  "name": "ex-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development node script/start.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/generator": "^7.2.2",
+    "@babel/parser": "^7.2.3",
+    "@babel/traverse": "^7.2.3",
+    "@babel/types": "^7.2.2",
+    "babel-loader": "^8.0.5",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "loader-utils": "^1.2.3",
+    "react": "^16.7.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.28.1"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0"
+  }
+}
