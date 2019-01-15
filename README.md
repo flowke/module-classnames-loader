@@ -9,6 +9,7 @@
   <br>
   <br>
 </div>
+
 # module-classnames-loader
 
 ![](https://img.shields.io/badge/node-%3E%3D7.6.0-brightgreen.svg) ![](https://img.shields.io/badge/%40babel%2Ftools-7.0.0-yellow.svg) ![](https://img.shields.io/apm/l/react.svg) ![](https://img.shields.io/npm/dw/module-classnames-loader.svg) ![](https://img.shields.io/npm/v/module-classnames-loader/latest.svg?colorB=red&registry_uri=%20https%3A%2F%2Fregistry.npmjs.com)
