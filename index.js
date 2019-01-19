@@ -16,7 +16,9 @@ module.exports = function (source, map, meta){
 
   let _self = this;
 
-  let options = loaderUtils.getOptions(this) || {}
+  let options = loaderUtils.getOptions(this) || {};
+
+  let { identifier='module', defaultImport = false } = options;
 
   this.sourceMap = options.sourceMap===true;
 
@@ -166,8 +168,17 @@ function pickLocals(source){
 
 
 function handleModuleDefaultName(path){
+
+  let isCss = false;
+
+  if (defaultImport){
+    isCss = new RegExp(`\.(scss|sass|css|less)$`).test(path.node.source.value)
+  }else{
+    isCss = new RegExp(`\.${identifier}\.(scss|sass|css|less)$`).test(path.node.source.value)
+  }
+  
   // 找到需要模块化css的引入
-  if (/\.module\.(scss|sass|css|less)$/.test(path.node.source.value)) {
+  if (isCss) {
     let defaultImp = path.node.specifiers.find(spec => {
       return types.isImportDefaultSpecifier(spec)
     })
