@@ -26,6 +26,7 @@
     "@babel/types": "^7.2.2",
     "loader-utils": "^1.2.3",
     "local-classname": "^1.0.1",
+    "neo-async": "^2.6.0",
     "webpack": "^4.28.1"
   }
 }
