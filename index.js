@@ -5,7 +5,7 @@ const traverse = require('@babel/traverse').default;
 const fsPath = require('path');
 const loaderUtils = require('loader-utils');
 const Module = require("module");
-const loadModule = require('./libs/loadModule.js');
+const loadModule = require('./lib/loadModule.js');
 
 module.exports = function (source, map, meta){
   let callback = this.async();
