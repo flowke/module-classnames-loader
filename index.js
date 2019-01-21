@@ -31,7 +31,7 @@ module.exports = function (source, map, meta){
   traverse(ast, {
     ImportDeclaration: {
       enter(path){
-        let localObjName = handleModuleDefaultName(path);
+        let localObjName = handleModuleDefaultName(path, defaultImport, identifier);
         if (localObjName){
           localsObjets.push(localObjName)
 
@@ -166,7 +166,7 @@ function pickLocals(source){
 }
 
 
-function handleModuleDefaultName(path){
+function handleModuleDefaultName(path, defaultImport, identifier){
 
   let isCss = false;
 

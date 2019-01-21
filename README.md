@@ -65,7 +65,7 @@ module.exports = {
 > **注意:** 要模块化的css文件, 务必要命名成 `*.module.(css|less|scss)` 的形式  
 > 如: 'syle.module.css',   
 > [create-react-app](https://github.com/facebook/create-react-app) 正是使用这种方式来进行模块化css文件, 使用 `create-react-app` 将可以无缝衔接
-> 在之后会考虑增加配置来定制[`module`] 处可以修改的字样 
+
 
 
 **假设你的程序有如下文件:**
@@ -263,8 +263,9 @@ module.exports = {
 ```
 options todo:
 
-- [x] `sourceMap: `boolean, default: false, 是否生成sourceMap
-- [ ] `identifier:` default: 'module', 用于配置需要模块化样式文件名的样板符号, 例如改成: 'mod', 那么你的文件名应为: `*.mod.(css|less|scss)` , 其他符号依次类推
+- `sourceMap: `boolean, default: false, 是否生成sourceMap
+- `identifier:` default: 'module', 用于配置需要模块化样式文件名的样板符号, 例如改成: 'mod', 那么你的文件名应为: `*.mod.(css|less|scss)` , 其他符号依次类推
+- `defaultImport`: boolean, default: false. 和 identifier互斥. 
 
 ## License
 
