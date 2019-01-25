@@ -12,7 +12,7 @@
 
 # module-classnames-loader
 
-![](https://img.shields.io/badge/node-%3E%3D7.6.0-brightgreen.svg) ![](https://img.shields.io/badge/%40babel%2Ftools-7.0.0-yellow.svg) ![](https://img.shields.io/apm/l/react.svg) ![](https://img.shields.io/npm/dw/module-classnames-loader.svg) ![](https://img.shields.io/npm/v/module-classnames-loader/latest.svg?colorB=red&registry_uri=%20https%3A%2F%2Fregistry.npmjs.com)
+![](https://img.shields.io/node/v/module-classnames-loader.svg) ![](https://img.shields.io/badge/%40babel%2Ftools-7.0.0-yellow.svg) ![](https://img.shields.io/npm/l/module-classnames-loader.svg) ![](https://img.shields.io/npm/dw/module-classnames-loader.svg) ![](https://img.shields.io/npm/v/module-classnames-loader/latest.svg?colorB=red&registry_uri=%20https%3A%2F%2Fregistry.npmjs.com)
 
 
 `module-classnames-loader` 是一个 webpack loader. 当你需要在 react 项目里使用模块化类名时, 它能在运行时聪明的应用你的模块化类名, 从而减少你的工作量. :hibiscus::hibiscus:

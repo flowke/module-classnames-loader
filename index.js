@@ -34,7 +34,6 @@ module.exports = function (source, map, meta){
         let localObjName = handleModuleDefaultName(path, defaultImport, identifier);
         if (localObjName){
           localsObjets.push(localObjName)
-
           if (!hasImportLocalClassname) {
             hasImportLocalClassname = true
 
@@ -54,6 +53,7 @@ module.exports = function (source, map, meta){
           name: 'className'
         });
         if(!isJSXClassAttr) return
+        if(!namelyName) return
 
         let valuePath = path.get('value');
 
