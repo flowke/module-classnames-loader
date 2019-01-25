@@ -5,12 +5,13 @@ const traverse = require('@babel/traverse').default;
 const fsPath = require('path');
 const loaderUtils = require('loader-utils');
 const Module = require("module");
+const parseConfig = require('./parseConfig.js');
 
 module.exports = function (source, map, meta){
   let callback = this.async();
   let ast = parser.parse(source, {
     sourceType: 'module',
-    plugins: ['jsx']
+    plugins: parseConfig.plugins
   })
 
   let _self = this;
