@@ -9,18 +9,26 @@ const parseConfig = require('./parseConfig.js');
 
 module.exports = function (source, map, meta){
   let callback = this.async();
-  let ast = parser.parse(source, {
-    sourceType: 'module',
-    plugins: parseConfig.plugins
-  })
 
   let _self = this;
 
   let options = loaderUtils.getOptions(this) || {};
 
-  let { identifier='module', defaultImport = false } = options;
+  let { 
+    identifier='module', 
+    defaultImport = false,
+    parserOptions = {}
+  } = options;
+
+  let {plugins: parsePlugins, ...restOpt} = parserOptions
 
   this.sourceMap = options.sourceMap===true;
+
+  let ast = parser.parse(source, {
+    sourceType: 'module',
+    ...restOpt,
+    plugins: parsePlugins || parseConfig.plugins
+  })
 
   // 保存所有引入js的 locals
   let localsObjets = []
@@ -40,7 +48,7 @@ module.exports = function (source, map, meta){
 
             let uidName = path.scope.generateUidIdentifier('namely')
             namelyName = uidName.name
-
+           
             path.insertBefore(genLocalClassnameImport(uidName))
 
           }
@@ -53,8 +61,12 @@ module.exports = function (source, map, meta){
         let isJSXClassAttr = types.isJSXIdentifier(path.node.name, {
           name: 'className'
         });
+
         if(!isJSXClassAttr) return
         if(!namelyName) return
+
+        
+        
 
         let valuePath = path.get('value');
 
@@ -177,11 +189,13 @@ function handleModuleDefaultName(path, defaultImport, identifier){
     isCss = new RegExp(`\.${identifier}\.(scss|sass|css|less)$`).test(path.node.source.value)
   }
   
+  
   // 找到需要模块化css的引入
   if (isCss) {
     let defaultImp = path.node.specifiers.find(spec => {
       return types.isImportDefaultSpecifier(spec)
     })
+
 
     // 如果没有默认导出, 就添加一个
     // 并且获得默认导出名
@@ -192,7 +206,7 @@ function handleModuleDefaultName(path, defaultImport, identifier){
       ))
       return uid.name
     } else {
-      return defaultImp.name
+      return defaultImp.local.name
     }
 
   }

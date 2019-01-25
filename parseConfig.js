@@ -1,7 +1,6 @@
 module.exports = {
 
   plugins: [
-    'flow',
     'jsx',
     'typescript',
     'flowComments',
@@ -11,7 +10,9 @@ module.exports = {
     'classProperties',
     'classPrivateProperties',
     'classPrivateMethods',
-    'decorators',
+    ['decorators',{
+      decoratorsBeforeExport: true
+    }],
     'doExpressions',
     'dynamicImport',
     'exportDefaultFrom',
@@ -25,7 +26,7 @@ module.exports = {
     'objectRestSpread',
     'optionalCatchBinding',
     'optionalChaining',
-    'pipelineOperator',
+    // 'pipelineOperator',
     'throwExpressions',
   ]
 }

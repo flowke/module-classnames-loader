@@ -266,6 +266,32 @@ options todo:
 - `sourceMap: `boolean, default: false, 是否生成sourceMap
 - `identifier:` default: 'module', 用于配置需要模块化样式文件名的样板符号, 例如改成: 'mod', 那么你的文件名应为: `*.mod.(css|less|scss)` , 其他符号依次类推
 - `defaultImport`: boolean, default: false. 和 identifier互斥. 
+- parserOptions: 能够解析的语法, 默认开启以下特性:
+  - 'jsx',
+  - 'typescript',
+  - 'flowComments',
+  - 'asyncGenerators',
+  - 'bigInt',
+  - 'classProperties',
+  - 'classPrivateProperties',
+  - 'classPrivateMethods',
+  - ['decorators',{
+     decoratorsBeforeExport: true
+  }],
+  - 'doExpressions',
+  - 'dynamicImport',
+  - 'exportDefaultFrom',
+  - 'exportNamespaceFrom',
+  - 'functionBind',
+  - 'functionSent',
+  - 'importMeta',
+  - 'logicalAssignment',
+  - 'nullishCoalescingOperator',
+  - 'numericSeparator',
+  - 'objectRestSpread',
+  - 'optionalCatchBinding',
+  - 'optionalChaining',
+  - 'throwExpressions',
 
 ## License
 
